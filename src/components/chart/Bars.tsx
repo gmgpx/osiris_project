@@ -5,7 +5,7 @@ import { PackagePlus } from "lucide-react";
 import { ChartConfig, ChartContainer } from "../ui/chart";
 import { Bar, CartesianGrid, XAxis, BarChart } from "recharts";
 
-export function ChartOverview() {
+export function Bars() {
 
     const chartData = [
         { month: "January", desktop: 186, mobile: 80 },
@@ -40,7 +40,7 @@ export function ChartOverview() {
 
             <CardContent>
 
-                <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
+                <ChartContainer config={chartConfig} className="min-h-[200px] w-full mt-8">
                     <BarChart data={chartData}>
                         <CartesianGrid vertical={false}/>
                         <XAxis

@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Label } from "../ui/label";
 import { DialogClose } from "@radix-ui/react-dialog";
 
-export default function Status() {
+export default function Reports() {
     return (
         <Card className="w-full">
 
