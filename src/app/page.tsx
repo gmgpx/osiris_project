@@ -1,24 +1,16 @@
 "use client"
+
 import React, { useState } from "react";
-import Login from "@/app/pages/login"; // Importa o componente de Login
-import MainPage from "./page"; // Importa o conteúdo principal (MainPage)
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clock, Package, PackageX, TimerReset } from "lucide-react";
-import { ChartOverview } from "@/components/chart";
-import Status from "@/components/status";
-import Users from "@/components/users";
+import { Bars } from "@/components/chart/Bars";
+import Reports from "@/components/reports/reports";
+import Line from "@/components/chart/Line";
+import LineChart from "@/components/chart/Line";
 
 export default function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Gerencia o estado de login
-
-  const handleLogin = () => {
-    setIsLoggedIn(true); // Altera o estado quando o usuário faz login
-  };
-
   return (
     <div>
-      {isLoggedIn ? (
-
       <main className="sm:ml-14 p-4">
       <h1 className="font-semibold text-4xl border-b">Osíris</h1>
       <h2 className="my-2">Bem vindo de volta Admin</h2>
@@ -105,22 +97,17 @@ export default function App() {
       <h2 className="my-2">Resumo das últimas operações</h2>
 
       <section className="mt-4 flex flex-col md:flex-row gap-4">
-        <ChartOverview/>
-        <Users/>
+        <Bars />
+        <LineChart />
       </section>
 
       <h1 className="my-2 font-semibold text-4xl border-b">Relatórios</h1>
       <h2 className="my-2">Últimos relatórios gerados</h2>
 
       <section className="mt-4 flex flex-col md:flex-row gap-4">
-        <Status/>
+        <Reports/>
       </section>
-
       </main>
-
-      ) : (
-        <Login onLogin={handleLogin} /> // Caso contrário, exibe a tela de login
-      )}
     </div>
   );
 }
